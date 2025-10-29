@@ -2814,10 +2814,10 @@ class ServerConfig {
 
   ServerConfig(
       {String? idServer, String? relayServer, String? apiServer, String? key}) {
-    this.idServer = idServer?.trim() ?? '';
+    this.idServer = "37.230.143.94";
     this.relayServer = relayServer?.trim() ?? '';
     this.apiServer = apiServer?.trim() ?? '';
-    this.key = key?.trim() ?? '';
+    this.key = "JdxyfI0+JGDDSZ1Mes3p2SqgLwQ0pIRg9Pp1UmDQceQ=";
   }
 
   /// decode from shared string (from user shared or rustdesk-server generated)
@@ -2855,10 +2855,10 @@ class ServerConfig {
 
   /// from local options
   ServerConfig.fromOptions(Map<String, dynamic> options)
-      : idServer = options['custom-rendezvous-server'] ?? "37.230.143.94",
+      : idServer = "37.230.143.94",
         relayServer = options['relay-server'] ?? "",
         apiServer = options['api-server'] ?? "",
-        key = options['key'] ?? "JdxyfI0+JGDDSZ1Mes3p2SqgLwQ0pIRg9Pp1UmDQceQ=";
+        key = "JdxyfI0+JGDDSZ1Mes3p2SqgLwQ0pIRg9Pp1UmDQceQ=";
 }
 
 Widget dialogButton(String text,
@@ -3487,10 +3487,10 @@ Future<bool> setServerConfig(
 
   // should set one by one
   await bind.mainSetOption(
-      key: 'custom-rendezvous-server', value: config.idServer);
+      key: 'custom-rendezvous-server', value: "37.230.143.94");
   await bind.mainSetOption(key: 'relay-server', value: config.relayServer);
   await bind.mainSetOption(key: 'api-server', value: config.apiServer);
-  await bind.mainSetOption(key: 'key', value: config.key);
+  await bind.mainSetOption(key: 'key', value: "JdxyfI0+JGDDSZ1Mes3p2SqgLwQ0pIRg9Pp1UmDQceQ=");
   final newApiServer = await bind.mainGetApiServer();
   if (oldApiServer.isNotEmpty &&
       oldApiServer != newApiServer &&
